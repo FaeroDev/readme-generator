@@ -2,13 +2,13 @@
   "name": "static-site",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "rmgen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^6.5.2"
   }
 }
