@@ -8,31 +8,42 @@ const questions = [];
 
 const readmeTemplate = (answers) => 
   `#  ${answers.title}
-  
+
+  ## Description
   ${answers.description}
   
-  
   ## Installation
-  
-  Link to working site: 
-   <https://pharaohnof.github.io/weather-dashboard-h6>
-  
+
   Clone the repository: 
-   git clone https://github.com/pharaohnof/weather-dashboard-h6.git
+    git clone ${answers.clone}  
+      
+  Dependencies:  
+    ${answers.dependencies}  
+    
+  ${answers.install}  
+
+  ## Usage instructions  
+    
+  ${answers.usage}  
+    
+  ## Contribution Guidelines  
+    
+  ${answers.contribute}
+    
+  ## Testing Instructions  
+    
+  ${answers.test}  
+    
+  ## Contact Info  
+    
+  GitHub: [${answers.github}](https://github.com/${answers.github})
+
+  Email:  ${answers.email}  
+    
+ <!--  ## Result
   
   
-  
-  
-  
-  
-  ## Result
-  
-  I created an html file with basic layout. I then created a javascript file with logic to call apis to get weather data for entered cities. The searched cities were saved to local storaage, which was used to create an array to create functioning history search buttons. The api weather data was used to fill dynamically created containers. All criteria were met. See below screenshots for final product and code.
-  
-  ![Final Result - hw5-load](./assets/images/final-weather-dashboard-load.png)
-  ![Final Result - hw5-persist](./assets/images/final-weather-dashboard-search.png)
-  ![Final Result - hw5-storage](./assets/images/final-weather-dashboard-js.png)
-  ![Final Result - hw5-js](./assets/images/final-weather-dashboard-html.png)`
+  ![Final Result - hw5-js](./assets/images/final-weather-dashboard-html.png) -->`
 
 
 inquirer
@@ -49,13 +60,23 @@ inquirer
     },
     {
       type: 'input',
-      name: 'installation',
-      message: 'How do you install your project?',
+      name: 'clone',
+      message: 'Enter the GitHub repo clone address:',
+    },
+    {
+      type: 'input',
+      name: 'dependencies',
+      message: 'Enter required dependencies:',
+    },
+    {
+      type: 'input',
+      name: 'install',
+      message: 'Add any additional installation instructions:',
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'How do you use your project',
+      message: 'Explain how one would use your project after installation:',
     },
     {
       type: 'input',
@@ -69,7 +90,7 @@ inquirer
     },
     {
         type: 'input',
-        name: 'contributions',
+        name: 'contribute',
         message: 'Enter contribution guidelines:',
       },
       {
@@ -81,10 +102,13 @@ inquirer
 
 .then((answers) => {
   const readmeFill = readmeTemplate(answers);
-  fs.writeFile('README.md', readmeFill, () => console.log('README.md Generated')
+  fs.writeFile('README.md', readmeFill, () => console.log(`---------README.md generated with the following content----------------
+  ${readmeFill}`)
   );
-  console.log(answers);
-  console.log(readmeFill);
+  console.log('RECIEVED INPUT') 
+  console.log(answers)
+  console.log('OUTPUTTING TO MD FILE');
+  // console.log(readmeFill);
 
 
 });
