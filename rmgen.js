@@ -4,37 +4,55 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 const questions = [];
 
+var licenseBadge;
+let license;
 
 
-const readmeTemplate = (answers) => 
-  `#  ${answers.title}
 
-  ## Description
+
+const readmeTemplate = (answers, badge) => 
+  `#  ${answers.title}   ${badge}
+
+  ##  Description
+
+***
+
   ${answers.description}
   
-  ## Installation
+  ##  Installation
 
-  Clone the repository: 
+  ***
+
+  ### Clone the repository: 
     git clone ${answers.clone}  
       
-  Dependencies:  
-    ${answers.dependencies}  
+  ### Dependencies:  
+  The following dependencies are required for use   ${answers.dependencies}
     
   ${answers.install}  
 
-  ## Usage instructions  
+  ##  Usage instructions  
     
   ${answers.usage}  
     
-  ## Contribution Guidelines  
+  ##  Contribution Guidelines  
     
   ${answers.contribute}
     
-  ## Testing Instructions  
+  ##  Testing Instructions  
     
   ${answers.test}  
     
-  ## Contact Info  
+  ##  License
+      
+  This project is covered under the ${badge} license.  
+    
+  See attached LICENSE file for details.  
+    
+  ##  Questions?  
+  
+  If you have any questions regarding this application you can reach me using the below contact information:  
+  ### Contact Info  
     
   GitHub: [${answers.github}](https://github.com/${answers.github})
 
@@ -97,21 +115,59 @@ inquirer
         type: 'input',
         name: 'test',
         message: 'Enter Testing instructions:',
+      },      {
+        type: 'input',
+        name: 'license',
+        message: 'Choose a license for your project from the following list: MIT - ISC - GPLv3 :',
       },
+
   ])
 
 .then((answers) => {
-  const readmeFill = readmeTemplate(answers);
-  fs.writeFile('README.md', readmeFill, () => console.log(`---------README.md generated with the following content----------------
+  license = (answers.license).toLowerCase();
+  switchFunction();
+  const readmeFill = readmeTemplate(answers, licenseBadge);
+
+  // switchFunction();
+  fs.writeFile('README.md', readmeFill, () => console.log(`---------README.md generated in current directory with the following content----------------
   ${readmeFill}`)
   );
   console.log('RECIEVED INPUT') 
   console.log(answers)
   console.log('OUTPUTTING TO MD FILE');
+  console.log(license)
+  // const switchFunction = 
+  function switchFunction(){ switch (license) {
+    case 'mit':
+      licenseBadge= 
+      `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+      console.log(licenseBadge);
+      break;
+  
+    case 'isc':
+      licenseBadge= `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
+      console.log(licenseBadge);
+      break;
+
+    case 'gplv3':
+      licenseBadge= `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+      console.log(licenseBadge);
+      break;
+
+    default:
+      licenseBadge= 
+      `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+      break;
+  }}
+  
+
   // console.log(readmeFill);
 
 
 });
+
+
+
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
