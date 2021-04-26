@@ -1,10 +1,10 @@
-#  README md Generator   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+#  TEST 6   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ##  Description
 
 ***
 
-  This project was created in order to generate README markdown files for GitHub projects. It uses NODE.js with inquirer and fs to take in input which is then written to a README markdown file in the current directory.
+  ;lakdjs
   
   ## Table Of Contents  
 
@@ -23,30 +23,34 @@
 ***
 
   ### Clone the repository: 
-    git clone https://github.com/pharaohnof/readme-generator.git  
+    git clone l;skdjf  
       
   ### Dependencies:  
   The following dependencies are required for use:  
-  * NODE.js   - inquirer   - fs
-    
+ * ;lsdkf  
+  
   ### Additional Installation Instructions:
+
+    
+  ;sadkjs;dlkjas;kdjas;dkjlf;aldksjfa;lkjas;djfa;j  
 
   ##  Usage instructions  
 
 ***
     
-        THIS PROJECT IS CURRENTLY UNDER CONSTRUCTION      
+  as;dkjas;dkjfa;ldksf;aldjsa;kdjsf;ldjsf  
     
   ##  Contribution Guidelines  
 
 ***
     
-  If you would like to contribute to this project, please [add me on GitHub](https://github.com/pharaohnof)    
+  ;sldkfa;sdkjfa;skfja;skdjfa;lkdjfaljsf
+    
   ##  Testing Instructions  
 
   ***
     
-  **N/A**  
+  s;dlkfja;ldjsf;ladkjf;ladjsf;ladjsf;aljf  
     
   ##  License
 
@@ -65,4 +69,4 @@
     
   GitHub: [pharaohnof](https://github.com/pharaohnof)
 
-  Email:  pharaohnof.software@gmail.com  
+  Email:  email@email.com

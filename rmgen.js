@@ -1,8 +1,6 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
-const questions = [];
+
 
 var licenseBadge;
 let license;
@@ -39,7 +37,11 @@ const readmeTemplate = (answers, badge) =>
     git clone ${answers.clone}  
       
   ### Dependencies:  
-  The following dependencies are required for use   ${answers.dependencies}
+  The following dependencies are required for use:  
+ * ${answers.dependencies}  
+  
+  ### Additional Installation Instructions:
+
     
   ${answers.install}  
 
@@ -67,7 +69,7 @@ const readmeTemplate = (answers, badge) =>
       
   This project is covered under the ${badge} license.  
     
-  See attached LICENSE file for details.  
+  See attached [LICENSE](./LICENSE) file for details.  
     
   ##  Questions?  
 
@@ -78,12 +80,7 @@ const readmeTemplate = (answers, badge) =>
     
   GitHub: [${answers.github}](https://github.com/${answers.github})
 
-  Email:  ${answers.email}  
-    
- <!--  ## Result
-  
-  
-  ![Final Result - hw5-js](./assets/images/final-weather-dashboard-html.png) -->`
+  Email:  ${answers.email}`
 
 
 inquirer
@@ -150,15 +147,13 @@ inquirer
   switchFunction();
   const readmeFill = readmeTemplate(answers, licenseBadge);
 
-  // switchFunction();
   fs.writeFile('README.md', readmeFill, () => console.log(`---------README.md generated in current directory with the following content----------------
   ${readmeFill}`)
   );
   console.log('RECIEVED INPUT') 
   console.log(answers)
   console.log('OUTPUTTING TO MD FILE');
-  console.log(license)
-  // const switchFunction = 
+
   function switchFunction(){ switch (license) {
     case 'mit':
       licenseBadge= 
@@ -182,23 +177,4 @@ inquirer
       break;
   }}
   
-
-  // console.log(readmeFill);
-
-
 });
-
-
-
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {  
-// }
-
-// Function call to initialize app
-// init();
-
-
