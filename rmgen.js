@@ -118,12 +118,12 @@ inquirer
     {
       type: 'input',
       name: 'github',
-      message: 'Enter your GitHub Username',
+      message: 'Enter your GitHub Username:',
     },
     {
       type: 'input',
       name: 'email',
-      message: 'Enter your Email address.',
+      message: 'Enter your Email address:',
     },
     {
         type: 'input',
@@ -137,7 +137,7 @@ inquirer
       },      {
         type: 'input',
         name: 'license',
-        message: 'Choose a license for your project from the following list: MIT - ISC - GPLv3 :',
+        message: 'Choose a license for your project from the following list: MIT - ISC - GPLv3 (MIT is default):',
       },
 
   ])
