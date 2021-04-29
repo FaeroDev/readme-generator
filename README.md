@@ -1,10 +1,10 @@
-#  README md Generator   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+#  README Generator   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ##  Description
 
 ***
 
-  This project was created in order to generate README markdown files for GitHub projects. It uses NODE.js with inquirer and fs to take in input which is then written to a README markdown file in the current directory.
+  This project was created in order to generate README markdown files for GitHub projects. It uses NODE.js with inquirer and fs to take in input which is then written to a README markdown file in the current directory. Included are shell scripts for linux bash, powershell, and CMD, all of which will allow you to run the rogram from any directory on your machine.
   
   ## Table Of Contents  
 
@@ -27,15 +27,33 @@
       
   ### Dependencies:  
   The following dependencies are required for use:  
-  * NODE.js   - inquirer   - fs
+  * NODE.js   - Inquirer npm package  - FS npm package
     
   ### Additional Installation Instructions:
-
+  Node.js is required to run this application, install it from your preferred package manager. Clone the above repository to your directory of choice. If you wish to use the included shell scripts to run the application from any directory, it is recommended to clone the repo to the following directories:  
+  * Linux: /home/readme-generator/  
+  * Windows: C:\"program files"\readme-generator\  
+  * Gitbash for Windows: /c/'program files'/readme-generator/.  
+    
+  If you choose another directory and want to use the shell scripts, you will need to change the referenced directory in the scripts.  
+  
+  *Optional -- to use the shell scripts you must include the file in you PATH. Use rmgen.cmd for Powershell and CMD, and rmgen for linux and other bash.*
+  - Linux -bash (or Windows Sunsytem for Linux) : /usr/bin/ is a common location in PATH for scripts
+  - Windows - Powershell or Command Line : C:/Windows/System32 is commonly in PATH
+  - Gitbash for Windows : /c/'program files'/Git/usr/bin is in PATH
+    
   ##  Usage instructions  
 
 ***
-    
-        THIS PROJECT IS CURRENTLY UNDER CONSTRUCTION      
+It is advised that you change the name of this file (README.md) to another name, as using this application will produce a file named README.md in this directory and overwrite any previous files of the same name.
+
+Once the repo is cloned the application may be ran from the installed directory by running node rmgen.js from the command line. the program my also be optionally run from the installed directoty by running node index.js from the command line (this was included to satisfy a user story requirement, but is not necessary.) Both of these options will produce a markdown file named README.md in the repo directory. The readme file will be filled with input from a command line inquiry.
+
+*Optional -- if you have installed the shell scripts to a directory in you PATH then you can run this application from any directory by entering `rmgen` in the command line. Using this option will produce the README.md file in whatever directory it is ran from.*
+
+See attached instructional video:
+
+
     
   ##  Contribution Guidelines  
 
