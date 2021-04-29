@@ -31,16 +31,16 @@
     
   ### Additional Installation Instructions:
   Node.js is required to run this application, install it from your preferred package manager. Clone the above repository to your directory of choice. If you wish to use the included shell scripts to run the application from any directory, it is recommended to clone the repo to the following directories:  
-  * Linux: /home/readme-generator/  
-  * Windows: C:\"program files"\readme-generator\  
-  * Gitbash for Windows: /c/'program files'/readme-generator/.  
+  * Linux: `/home/readme-generator/`  
+  * Windows: `C:\"program files"\readme-generator\`  
+  * Gitbash for Windows: `/c/'program files'/readme-generator/`.  
     
   If you choose another directory and want to use the shell scripts, you will need to change the referenced directory in the scripts.  
   
-  *Optional -- to use the shell scripts you must include the file in you PATH. Use `rmgen.cmd` for Powershell and CMD, and `rmgen` for Linux and other bash.*
-  - Linux -bash (or Windows Sunsytem for Linux) : /usr/bin/ is a common location in PATH for scripts
-  - Windows - Powershell or Command Line : C:/Windows/System32 is commonly in PATH
-  - Gitbash for Windows : /c/'program files'/Git/usr/bin is in PATH
+  *Optional -- to use the shell scripts you must include the file in your PATH. Use `rmgen.cmd` for Powershell and CMD, and `rmgen` for Linux and other bash.*
+  - Linux -bash (or Windows Sunsytem for Linux) : `/usr/bin/` is a common location in PATH for scripts
+  - Windows - Powershell or Command Line : `C:/Windows/System32` is commonly in PATH
+  - Gitbash for Windows : `/c/'program files'/Git/usr/bin` is in PATH
     
   ##  Usage instructions  
 
