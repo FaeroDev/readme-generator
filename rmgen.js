@@ -1,14 +1,10 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-
+const inquirer = require("inquirer");
+const fs = require("fs");
 
 var licenseBadge;
 let license;
 
-
-
-
-const readmeTemplate = (answers, badge) => 
+const readmeTemplate = (answers, badge) =>
   `#  ${answers.title}   ${badge}
 
   ##  Description
@@ -80,101 +76,101 @@ const readmeTemplate = (answers, badge) =>
     
   GitHub: [${answers.github}](https://github.com/${answers.github})
 
-  Email:  ${answers.email}`
-
+  Email:  ${answers.email}`;
 
 inquirer
   .prompt([
     {
-      type: 'input',
-      name: 'title',
-      message: 'What is the project title?',
+      type: "input",
+      name: "title",
+      message: "What is the project title?",
     },
     {
-      type: 'input',
-      name: 'description',
-      message: 'Write a description of your project:',
+      type: "input",
+      name: "description",
+      message: "Write a description of your project:",
     },
     {
-      type: 'input',
-      name: 'clone',
-      message: 'Enter the GitHub repo clone address:',
+      type: "input",
+      name: "clone",
+      message: "Enter the GitHub repo clone address:",
     },
     {
-      type: 'input',
-      name: 'dependencies',
-      message: 'Enter required dependencies:',
+      type: "input",
+      name: "dependencies",
+      message: "Enter required dependencies:",
     },
     {
-      type: 'input',
-      name: 'install',
-      message: 'Add any additional installation instructions:',
+      type: "input",
+      name: "install",
+      message: "Add any additional installation instructions:",
     },
     {
-      type: 'input',
-      name: 'usage',
-      message: 'Explain how one would use your project after installation:',
+      type: "input",
+      name: "usage",
+      message: "Explain how one would use your project after installation:",
     },
     {
-      type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username:',
+      type: "input",
+      name: "github",
+      message: "Enter your GitHub Username:",
     },
     {
-      type: 'input',
-      name: 'email',
-      message: 'Enter your Email address:',
+      type: "input",
+      name: "email",
+      message: "Enter your Email address:",
     },
     {
-        type: 'input',
-        name: 'contribute',
-        message: 'Enter contribution guidelines:',
-      },
-      {
-        type: 'input',
-        name: 'test',
-        message: 'Enter Testing instructions:',
-      },      {
-        type: 'input',
-        name: 'license',
-        message: 'Choose a license for your project from the following list: MIT - ISC - GPLv3 (MIT is default):',
-      },
-
+      type: "input",
+      name: "contribute",
+      message: "Enter contribution guidelines:",
+    },
+    {
+      type: "input",
+      name: "test",
+      message: "Enter Testing instructions:",
+    },
+    {
+      type: "input",
+      name: "license",
+      message:
+        "Choose a license for your project from the following list: MIT - ISC - GPLv3 (MIT is default):",
+    },
   ])
 
-.then((answers) => {
-  license = (answers.license).toLowerCase();
-  switchFunction();
-  const readmeFill = readmeTemplate(answers, licenseBadge);
+  .then((answers) => {
+    license = answers.license.toLowerCase();
+    switchFunction();
+    const readmeFill = readmeTemplate(answers, licenseBadge);
 
-  fs.writeFile('README.md', readmeFill, () => console.log(`---------README.md generated in current directory with the following content----------------
+    fs.writeFile("README.md", readmeFill, () =>
+      console.log(`---------README.md generated in current directory with the following content----------------
   ${readmeFill}`)
-  );
-  console.log('RECIEVED INPUT') 
-  console.log(answers)
-  console.log('OUTPUTTING TO MD FILE');
+    );
+    console.log("RECIEVED INPUT");
+    console.log(answers);
+    console.log("OUTPUTTING TO MD FILE");
 
-  function switchFunction(){ switch (license) {
-    case 'mit':
-      licenseBadge= 
-      `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-      console.log(licenseBadge);
-      break;
-  
-    case 'isc':
-      licenseBadge= `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
-      console.log(licenseBadge);
-      break;
+    function switchFunction() {
+      switch (license) {
+        case "mit":
+          licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+          console.log(licenseBadge);
+          break;
 
-    case 'gplv3':
-      licenseBadge= `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-      console.log(licenseBadge);
-      break;
+        case "isc":
+          licenseBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
+          console.log(licenseBadge);
+          break;
 
-    default:
-      licenseBadge= 
-      `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-      break;
-  }}
-  
-});
+        case "gplv3":
+          licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+          console.log(licenseBadge);
+          break;
+
+        default:
+          licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+          break;
+      }
+    }
+  });
