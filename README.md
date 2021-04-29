@@ -4,7 +4,7 @@
 
 ***
 
-  This project was created in order to generate README markdown files for GitHub projects. It uses NODE.js with inquirer and fs to take in input which is then written to a README markdown file in the current directory. Included are shell scripts for linux bash, powershell, and CMD, all of which will allow you to run the rogram from any directory on your machine.
+  This project was created in order to easily generate README markdown files for GitHub projects from the command line. It uses NODE.js with Inquirer and FS to take in input from a series of questions, which is then written to a README markdown file in the current directory. Included are shell scripts for Linux bash, Powershell, and CMD, all of which will allow you to run the program from any directory on your machine.
   
   ## Table Of Contents  
 
@@ -37,7 +37,7 @@
     
   If you choose another directory and want to use the shell scripts, you will need to change the referenced directory in the scripts.  
   
-  *Optional -- to use the shell scripts you must include the file in you PATH. Use rmgen.cmd for Powershell and CMD, and rmgen for linux and other bash.*
+  *Optional -- to use the shell scripts you must include the file in you PATH. Use `rmgen.cmd` for Powershell and CMD, and `rmgen` for Linux and other bash.*
   - Linux -bash (or Windows Sunsytem for Linux) : /usr/bin/ is a common location in PATH for scripts
   - Windows - Powershell or Command Line : C:/Windows/System32 is commonly in PATH
   - Gitbash for Windows : /c/'program files'/Git/usr/bin is in PATH
@@ -47,7 +47,7 @@
 ***
 It is advised that you change the name of this file (README.md) to another name, as using this application will produce a file named README.md in this directory and overwrite any previous files of the same name.
 
-Once the repo is cloned the application may be ran from the installed directory by running node rmgen.js from the command line. the program my also be optionally run from the installed directoty by running node index.js from the command line (this was included to satisfy a user story requirement, but is not necessary.) Both of these options will produce a markdown file named README.md in the repo directory. The readme file will be filled with input from a command line inquiry.
+Once the repo is cloned the application may be ran from the installed directory by running `node rmgen.js` from the command line. the program my also be optionally run from the installed directory by running `node index.js` from the command line (this was included to satisfy a user story requirement, but is not necessary.) Both of these options will produce a markdown file named README.md in the repo directory. The readme file will be filled with input from a command line inquiry.
 
 *Optional -- if you have installed the shell scripts to a directory in you PATH then you can run this application from any directory by entering `rmgen` in the command line. Using this option will produce the README.md file in whatever directory it is ran from.*
 
