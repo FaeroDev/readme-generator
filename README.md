@@ -34,8 +34,11 @@
   * Linux: `/home/readme-generator/`  
   * Windows: `C:\"program files"\readme-generator\`  
   * Gitbash for Windows: `/c/'program files'/readme-generator/`.  
-    
+      
   If you choose another directory and want to use the shell scripts, you will need to change the referenced directory in the scripts.  
+    
+  Once the repo has been cloned, navigate to the specified directory and run `npm install` to install the required dependencies.
+
   
   *Optional -- to use the shell scripts you must include the file in your PATH. Use `rmgen.cmd` for Powershell and CMD, and `rmgen` for Linux and other bash.*
   - Linux -bash (or Windows Sunsytem for Linux) : `/usr/bin/` is a common location in PATH for scripts
@@ -49,11 +52,11 @@ It is advised that you change the name of this file (README.md) to another name,
 
 Once the repo is cloned the application may be ran from the installed directory by running `node rmgen.js` from the command line. the program my also be optionally run from the installed directory by running `node index.js` from the command line (this was included to satisfy a user story requirement, but is not necessary.) Both of these options will produce a markdown file named README.md in the repo directory. The readme file will be filled with input from a command line inquiry.
 
-*Optional -- if you have installed the shell scripts to a directory in you PATH then you can run this application from any directory by entering `rmgen` in the command line. Using this option will produce the README.md file in whatever directory it is ran from.*
+*Optional -- if you have installed the shell scripts to a directory in your PATH then you can run this application from any directory by entering `rmgen` in the command line. Using this option will produce the README.md file in whatever directory it is ran from.*
 
 See attached instructional video:
 
-
+[![README-GENERATOR INSTRUCTIONAL VIDEO](./inst.png)](https://youtu.be/_GmBIsQ49JA "RMGEN INSTRUCTIONS") 
     
   ##  Contribution Guidelines  
 
