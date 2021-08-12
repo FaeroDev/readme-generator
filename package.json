@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node rmgen.js"
   },
-  "author": "M. Scott Pawlak (pharaohnof)",
+  "author": "M. Scott Pawlak (FaeroDev)",
   "license": "MIT",
   "bugs":{
-    "url": "https://github.com/pharaohnof/readme-generator/issues"
+    "url": "https://github.com/FaeroDev/readme-generator/issues"
   },
   "dependencies": {
     "fs": "0.0.1-security",
