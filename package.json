@@ -1,19 +1,19 @@
 {
   "name": "readme-generator",
-  "version": "1.9.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "readme genertoor for github projects",
   "main": "rmgen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node rmgen.js"
   },
-  "author": "M. Scott Pawlak (FaeroDev)",
+  "author": "FaeroDev (MSP)",
   "license": "MIT",
-  "bugs":{
+  "bugs": {
     "url": "https://github.com/FaeroDev/readme-generator/issues"
   },
   "dependencies": {
-    "fs": "0.0.1-security",
-    "inquirer": "^6.5.2"
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.0"
   }
 }
