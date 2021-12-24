@@ -1,6 +1,7 @@
 // const inquirer = require("inquirer");
-import inquirer from "inquirer"
-const fs = require("fs");
+import inquirer from "inquirer";
+import  fs from "fs"
+// const fs = require("fs");
 
 var licenseBadge;
 let license;
