@@ -1,8 +1,8 @@
 {
   "name": "readme-generator",
   "version": "2.0.0",
-  "description": "readme genertor for github projects",
-  "main": "rmgen.js",
+  "description": "readme generator for github projects",
+  "main": "rmgen.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx ts-node rmgen.ts"

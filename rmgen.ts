@@ -147,10 +147,11 @@ inquirer
       message: "Enter Testing instructions:",
     },
     {
-      type: "input",
+      type: "list",
       name: "license",
       message:
         "Choose a license for your project from the following list: MIT - ISC - GPLv3 (MIT is default):",
+      choices: ['MIT', 'ISC', 'GPLv3'],
     },
   ])
 
@@ -158,7 +159,7 @@ inquirer
     const license: string = answers.license.toLowerCase();
     // switchFunction();
     // const readmeFill = readmeTemplate(answers, licenseBadge);
-    const readmeFill: string = readmeTemplate(answers, switchFunction(license));
+    const readmeFill: string = readmeTemplate(answers, switchFunction(answers.license.toLowerCase()));
 
 
     fs.writeFile("README.md", readmeFill, () =>
@@ -176,27 +177,21 @@ inquirer
         case "mit":
           licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
           console.log(licenseBadge);
-          // return licenseBadge;
           break;
 
         case "isc":
           licenseBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
           console.log(licenseBadge);
-          // return licenseBadge;
-
           break;
 
         case "gplv3":
           licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
           console.log(licenseBadge);
-          // return licenseBadge;
 
           break;
 
         default:
           licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-          // return licenseBadge;
-
           break;
       }
       return licenseBadge;
