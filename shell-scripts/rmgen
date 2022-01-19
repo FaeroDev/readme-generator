@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # use this for Linux (Ubuntu) or Windows Subsystem for Linux (Windows 10)
-#node /home/readme-generator/rmgen.js
+npx ts-node /home/readme-generator/rmgen.ts
 
 # use this for Gitbash on Windows
-node /c/'program files'/readme-generator/rmgen.js
+# npx ts-node /c/'program files'/readme-generator/rmgen.ts
 
 #depending on your Gitbash setup you may need to use this
-#node /mnt/c/'program files'/readme-generator/rmgen.js
+#npx ts-node /mnt/c/'program files'/readme-generator/rmgen.ts
