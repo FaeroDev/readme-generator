@@ -139,6 +139,7 @@ inquirer
   ])
 
   .then((answers) => {
+    console.log(answers)
     license = answers.license.toLowerCase();
     switchFunction();
     const readmeFill = readmeTemplate(answers, licenseBadge);

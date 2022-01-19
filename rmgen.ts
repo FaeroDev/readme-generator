@@ -1,12 +1,26 @@
 // const inquirer = require("inquirer");
-import inquirer from "inquirer";
-import  fs from "fs"
+import * as inquirer from "inquirer";
+import * as fs from "fs"
 // const fs = require("fs");
 
-var licenseBadge;
-let license;
+// let license: string;
 
-const readmeTemplate = (answers, badge) =>
+interface Answers {
+    title: string,
+    description: string,
+    clone: string,
+    dependencies: string,
+    install: string,
+    usage: string,
+    github: string,
+    email: string,
+    contribute: string,
+    test: string,
+    license: string
+  }
+
+
+const readmeTemplate: Function =  (answers: Answers, badge: string): string =>
   `#  ${answers.title}   ${badge}
 
   ##  Description
@@ -140,10 +154,12 @@ inquirer
     },
   ])
 
-  .then((answers) => {
-    license = answers.license.toLowerCase();
-    switchFunction();
-    const readmeFill = readmeTemplate(answers, licenseBadge);
+  .then((answers: Answers) => {
+    const license: string = answers.license.toLowerCase();
+    // switchFunction();
+    // const readmeFill = readmeTemplate(answers, licenseBadge);
+    const readmeFill: string = readmeTemplate(answers, switchFunction(license));
+
 
     fs.writeFile("README.md", readmeFill, () =>
       console.log(`---------README.md generated in current directory with the following content----------------
@@ -153,26 +169,36 @@ inquirer
     console.log(answers);
     console.log("OUTPUTTING TO MD FILE");
 
-    function switchFunction() {
-      switch (license) {
+    function switchFunction(input: string): string {
+      let licenseBadge: string;
+
+      switch (input) {
         case "mit":
           licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
           console.log(licenseBadge);
+          // return licenseBadge;
           break;
 
         case "isc":
           licenseBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
           console.log(licenseBadge);
+          // return licenseBadge;
+
           break;
 
         case "gplv3":
           licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
           console.log(licenseBadge);
+          // return licenseBadge;
+
           break;
 
         default:
           licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+          // return licenseBadge;
+
           break;
       }
+      return licenseBadge;
     }
   });
