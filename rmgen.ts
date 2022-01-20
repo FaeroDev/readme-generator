@@ -1,98 +1,10 @@
-// const inquirer = require("inquirer");
 import * as inquirer from "inquirer";
 import * as fs from "fs"
-// const fs = require("fs");
-
-// let license: string;
-
-interface Answers {
-    title: string,
-    description: string,
-    clone: string,
-    dependencies: string,
-    install: string,
-    usage: string,
-    github: string,
-    email: string,
-    contribute: string,
-    test: string,
-    license: string
-  }
+import {Answers} from "./src/interfaces"
+import {readmeTemplate} from "./src/readmeTemplate"
+import {licenseSwitch} from "./src/licenseSwitch"
 
 
-const readmeTemplate: Function =  (answers: Answers, badge: string): string =>
-  `#  ${answers.title}   ${badge}
-
-  ##  Description
-
-***
-
-  ${answers.description}
-  
-  ## Table Of Contents  
-
-***
-  * [Description](#Description)
-  * [Table Of Contents](#table-of-contents)
-  * [Installation](#Installation)
-  * [Usage Instructions](#usage-instructions)
-  * [Contribution Guidelines](#contribution-guidelines)
-  * [Testing Instructions](#testing-instructions)
-  * [License](#License)
-  * [Questions?](#questions)
-
-  ##  Installation
-
-***
-
-  ### Clone the repository: 
-    git clone ${answers.clone}  
-      
-  ### Dependencies:  
-  The following dependencies are required for use:  
- * ${answers.dependencies}  
-  
-  ### Additional Installation Instructions:
-
-    
-  ${answers.install}  
-
-  ##  Usage instructions  
-
-***
-    
-  ${answers.usage}  
-    
-  ##  Contribution Guidelines  
-
-***
-    
-  ${answers.contribute}
-    
-  ##  Testing Instructions  
-
-  ***
-    
-  ${answers.test}  
-    
-  ##  License
-
-  ***
-      
-  This project is covered under the ${badge} license.  
-    
-  See attached [LICENSE](./LICENSE) file for details.  
-    
-  ##  Questions?  
-
-  ***
-  
-  If you have any questions regarding this application you can reach me using the below contact information:  
-  ### Contact Info  
-    
-  GitHub: [${answers.github}](https://github.com/${answers.github})
-
-  Email:  ${answers.email}`;
 
 inquirer
   .prompt([
@@ -156,10 +68,7 @@ inquirer
   ])
 
   .then((answers: Answers) => {
-    const license: string = answers.license.toLowerCase();
-    // switchFunction();
-    // const readmeFill = readmeTemplate(answers, licenseBadge);
-    const readmeFill: string = readmeTemplate(answers, switchFunction(answers.license.toLowerCase()));
+    const readmeFill: string = readmeTemplate(answers, licenseSwitch(answers.license.toLowerCase()));
 
 
     fs.writeFile("README.md", readmeFill, () =>
@@ -169,31 +78,4 @@ inquirer
     console.log("RECIEVED INPUT");
     console.log(answers);
     console.log("OUTPUTTING TO MD FILE");
-
-    function switchFunction(input: string): string {
-      let licenseBadge: string;
-
-      switch (input) {
-        case "mit":
-          licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-          console.log(licenseBadge);
-          break;
-
-        case "isc":
-          licenseBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
-          console.log(licenseBadge);
-          break;
-
-        case "gplv3":
-          licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-          console.log(licenseBadge);
-
-          break;
-
-        default:
-          licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-          break;
-      }
-      return licenseBadge;
-    }
   });
