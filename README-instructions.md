@@ -6,6 +6,8 @@
 
   This project was created in order to easily generate README markdown files for GitHub projects from the command line. It uses NODE.js with Inquirer and FS to take in input from a series of questions, which is then written to a README markdown file in the current directory. Included are shell scripts for Linux bash, Powershell, and CMD, all of which will allow you to run the program from any directory on your machine.
   
+  ***v2.0** This project was recently converted to TypeScript with small additional features.*
+  
   ## Table Of Contents  
 
 ***
@@ -27,7 +29,7 @@
       
   ### Dependencies:  
   The following dependencies are required for use:  
-  * NODE.js   - Inquirer npm package  - FS npm package
+  * NODE.js   - Inquirer npm package  - FS npm package - TS-Node
     
   ### Additional Installation Instructions:
   Node.js is required to run this application, install it from your preferred package manager. Clone the above repository to your directory of choice. If you wish to use the included shell scripts to run the application from any directory, it is recommended to clone the repo to the following directories:  
@@ -50,7 +52,7 @@
 ***
 It is advised that you change the name of this file (README.md) to another name, as using this application will produce a file named README.md in this directory and overwrite any previous files of the same name.
 
-Once the repo is cloned the application may be ran from the installed directory by running `node rmgen.js` from the command line. the program my also be optionally run from the installed directory by running `node index.js` from the command line (this was included to satisfy a user story requirement, but is not necessary.) Both of these options will produce a markdown file named README.md in the repo directory. The readme file will be filled with input from a command line inquiry.
+Once the repo is cloned the application may be ran from the installed directory by running `npm start` from the command line. This will produce a markdown file named README.md in the repo directory. The readme file will be filled with input from a command line inquiry.
 
 *Optional -- if you have installed the shell scripts to a directory in your PATH then you can run this application from any directory by entering `rmgen` in the command line. Using this option will produce the README.md file in whatever directory it is ran from. In Linux You may need to change file permissions to run the script, for most users 755 will work fine. navigate to the directory where the script is located and run `chmod 755 rmgen` from the command line.*
 
