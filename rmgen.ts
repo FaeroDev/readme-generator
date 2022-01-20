@@ -1,10 +1,8 @@
 import * as inquirer from "inquirer";
-import * as fs from "fs"
-import {Answers} from "./src/interfaces"
-import {readmeTemplate} from "./src/readmeTemplate"
-import {licenseSwitch} from "./src/licenseSwitch"
-
-
+import * as fs from "fs";
+import { Answers } from "./src/interfaces";
+import { readmeTemplate } from "./src/readmeTemplate";
+import { licenseSwitch } from "./src/licenseSwitch";
 
 inquirer
   .prompt([
@@ -61,15 +59,16 @@ inquirer
     {
       type: "list",
       name: "license",
-      message:
-        "Choose a license for your project from the following list: MIT - ISC - GPLv3 (MIT is default):",
-      choices: ['MIT', 'ISC', 'GPLv3'],
+      message: "Choose a license for your project from the following list:",
+      choices: ["MIT", "ISC", "GPLv3"],
     },
   ])
 
   .then((answers: Answers) => {
-    const readmeFill: string = readmeTemplate(answers, licenseSwitch(answers.license.toLowerCase()));
-
+    const readmeFill: string = readmeTemplate(
+      answers,
+      licenseSwitch(answers.license.toLowerCase())
+    );
 
     fs.writeFile("README.md", readmeFill, () =>
       console.log(`---------README.md generated in current directory with the following content----------------

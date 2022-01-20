@@ -1,6 +1,9 @@
-import {Answers} from "./interfaces"
+import { Answers } from "./interfaces";
 
-export const readmeTemplate: Function =  (answers: Answers, badge: string): string =>
+export const readmeTemplate: Function = (
+  answers: Answers,
+  badge: string
+): string =>
   `#  ${answers.title}   ${badge}
 
   ##  Description
